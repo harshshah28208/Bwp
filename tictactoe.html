@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e293b;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .game-box {
+      background-color: #0f172a;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 340px;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #38bdf8;
+    }
+
+    .mode-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 8px;
+      background-color: #334155;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .mode-btn.active {
+      background-color: #2563eb;
+    }
+
+    .status {
+      font-size: 16px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      height: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .cell {
+      width: 95px;
+      height: 95px;
+      background-color: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 8px;
+      font-size: 36px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .cell:hover {
+      background-color: #334155;
+    }
+
+    .cell.x {
+      color: #38bdf8;
+    }
+
+    .cell.o {
+      color: #f43f5e;
+    }
+
+    .btn-reset {
+      width: 100%;
+      padding: 10px;
+      background-color: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-reset:hover {
+      background-color: #1d4ed8;
+    }
+
+    .score-board {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 15px;
+      font-size: 14px;
+      background-color: #1e293b;
+      padding: 8px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-box">
+    <h1>Tic-Tac-Toe</h1>
+
+    <div class="mode-buttons">
+      <button class="mode-btn active" id="btnPvp" onclick="setMode('pvp')">2 Player</button>
+      <button class="mode-btn" id="btnAi" onclick="setMode('ai')">vs Computer</button>
+    </div>
+
+    <div class="score-board">
+      <span>X: <strong id="scoreX">0</strong></span>
+      <span>Ties: <strong id="scoreTies">0</strong></span>
+      <span>O: <strong id="scoreO">0</strong></span>
+    </div>
+
+    <div class="status" id="statusText">Player X's Turn</div>
+
+    <div class="grid">
+      <div class="cell" onclick="cellClick(0)"></div>
+      <div class="cell" onclick="cellClick(1)"></div>
+      <div class="cell" onclick="cellClick(2)"></div>
+      <div class="cell" onclick="cellClick(3)"></div>
+      <div class="cell" onclick="cellClick(4)"></div>
+      <div class="cell" onclick="cellClick(5)"></div>
+      <div class="cell" onclick="cellClick(6)"></div>
+      <div class="cell" onclick="cellClick(7)"></div>
+      <div class="cell" onclick="cellClick(8)"></div>
+    </div>
+
+    <button class="btn-reset" onclick="resetGame()">Restart Game</button>
+  </div>
+
+  <script>
+    let board = ["", "", "", "", "", "", "", "", ""];
+    let currentPlayer = "X";
+    let gameActive = true;
+    let mode = "pvp";
+    let scores = { X: 0, O: 0, ties: 0 };
+
+    const winCombos = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6]
+    ];
+
+    const cells = document.querySelectorAll(".cell");
+    const statusText = document.getElementById("statusText");
+
+    function cellClick(index) {
+      if (board[index] !== "" || !gameActive) return;
+
+      makeMove(index, currentPlayer);
+
+      if (gameActive && mode === "ai" && currentPlayer === "O") {
+        setTimeout(aiMove, 300);
+      }
+    }
+
+    function makeMove(index, player) {
+      board[index] = player;
+      cells[index].textContent = player;
+      cells[index].classList.add(player.toLowerCase());
+
+      if (checkWin(player)) {
+        statusText.textContent = "Player " + player + " Wins!";
+        scores[player]++;
+        updateScores();
+        gameActive = false;
+        return;
+      }
+
+      if (checkDraw()) {
+        statusText.textContent = "It's a Draw!";
+        scores.ties++;
+        updateScores();
+        gameActive = false;
+        return;
+      }
+
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+      statusText.textContent = "Player " + currentPlayer + "'s Turn";
+    }
+
+    function checkWin(player) {
+      return winCombos.some(combo => combo.every(i => board[i] === player));
+    }
+
+    function checkDraw() {
+      return board.every(cell => cell !== "");
+    }
+
+    function updateScores() {
+      document.getElementById("scoreX").textContent = scores.X;
+      document.getElementById("scoreO").textContent = scores.O;
+      document.getElementById("scoreTies").textContent = scores.ties;
+    }
+
+    function setMode(newMode) {
+      mode = newMode;
+      document.getElementById("btnPvp").classList.toggle("active", mode === "pvp");
+      document.getElementById("btnAi").classList.toggle("active", mode === "ai");
+      resetGame();
+    }
+
+    function resetGame() {
+      board = ["", "", "", "", "", "", "", "", ""];
+      currentPlayer = "X";
+      gameActive = true;
+      statusText.textContent = "Player X's Turn";
+      cells.forEach(cell => {
+        cell.textContent = "";
+        cell.className = "cell";
+      });
+    }
+
+    function aiMove() {
+      let emptyIndices = [];
+      for (let i = 0; i < 9; i++) {
+        if (board[i] === "") emptyIndices.push(i);
+      }
+      if (emptyIndices.length > 0 && gameActive) {
+        let randomIndex = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+        makeMove(randomIndex, "O");
+      }
+    }
+  </script>
+</body>
+</html>

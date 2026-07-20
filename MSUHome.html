@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Maharaja Sayajirao University of Baroda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    /* 1. Top Cyan Utility Bar Table */
+    .top-bar-table {
+      width: 100%;
+      background-color: #0096d6;
+      color: #ffffff;
+      font-size: 12px;
+      border-collapse: collapse;
+    }
+
+    .top-bar-table td {
+      padding: 6px 25px;
+    }
+
+    .top-bar-table a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .top-bar-table a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links a {
+      color: #ffffff;
+      margin-left: 10px;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    /* 2. Header Main Logo Table */
+    .univ-header-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      padding: 15px 30px;
+    }
+
+    .logo-left-td {
+      width: 15%;
+      text-align: center;
+      vertical-align: middle;
+      padding: 10px;
+    }
+
+    .title-center-td {
+      width: 70%;
+      text-align: center;
+      vertical-align: middle;
+      padding: 10px;
+    }
+
+    .title-center-td h1 {
+      font-family: 'Times New Roman', Georgia, serif;
+      font-size: 25px;
+      font-weight: bold;
+      color: #000000;
+      letter-spacing: 0.5px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .logo-right-td {
+      width: 15%;
+      text-align: center;
+      vertical-align: middle;
+      padding: 10px;
+    }
+
+    .logo-img {
+      max-height: 80px;
+      width: auto;
+    }
+
+    /* 3. Navigation Bar Table */
+    .navbar-table {
+      width: 100%;
+      background-color: #1f2c42;
+      border-collapse: collapse;
+    }
+
+    .navbar-table td {
+      text-align: center;
+      padding: 0;
+    }
+
+    .navbar-table a {
+      display: block;
+      padding: 14px 16px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: bold;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .navbar-table a:hover, .navbar-table a.active {
+      background-color: #0096d6;
+    }
+
+    /* 4. Hero Layout 3-Column Table */
+    .hero-layout-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #f0f4f8;
+    }
+
+    .sidebar-left-td {
+      width: 18%;
+      background-color: #0096d6;
+      vertical-align: top;
+      padding: 0;
+    }
+
+    .sidebar-left-td a {
+      display: block;
+      padding: 14px 16px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      transition: background 0.2s;
+    }
+
+    .sidebar-left-td a:hover {
+      background-color: #0080b8;
+    }
+
+    .slider-center-td {
+      width: 64%;
+      position: relative;
+      background-color: #000000;
+      vertical-align: middle;
+      padding: 0;
+    }
+
+    .slider-center-td img {
+      width: 100%;
+      height: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 28px;
+      padding: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .arrow-left { left: 15px; }
+    .arrow-right { right: 15px; }
+
+    .sidebar-right-td {
+      width: 18%;
+      background-color: #0096d6;
+      vertical-align: top;
+      padding: 0;
+    }
+
+    .sidebar-right-td a {
+      display: block;
+      padding: 14px 16px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      transition: background 0.2s;
+    }
+
+    .sidebar-right-td a:hover {
+      background-color: #0080b8;
+    }
+
+    /* 5. Color Button Grid Table */
+    .button-grid-table {
+      width: 100%;
+      max-width: 1350px;
+      margin: 25px auto;
+      border-collapse: separate;
+      border-spacing: 12px;
+    }
+
+    .btn-cell-card {
+      text-align: center;
+      padding: 14px 8px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .btn-cell-card a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: bold;
+      display: block;
+    }
+
+    .btn-orange { background-color: #d96b00; }
+    .btn-maroon { background-color: #8b1e3f; }
+    .btn-red { background-color: #e52b2b; }
+    .btn-teal { background-color: #46c9a7; }
+    .btn-purple { background-color: #6b6893; }
+    .btn-coral { background-color: #eb6050; }
+
+    /* 6. Content Section Table */
+    .main-content-table {
+      width: 100%;
+      max-width: 1350px;
+      margin: 30px auto;
+      border-collapse: collapse;
+    }
+
+    .content-left-td {
+      width: 68%;
+      padding: 0 25px 20px 0;
+      vertical-align: top;
+    }
+
+    .content-left-td h2 {
+      font-size: 26px;
+      font-family: 'Times New Roman', serif;
+      color: #1f2c42;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .content-left-td p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #444444;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .video-container-box {
+      background-color: #1f2c42;
+      padding: 20px;
+      border-radius: 8px;
+      color: #ffffff;
+      margin-top: 25px;
+    }
+
+    .video-container-box h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 18px;
+      color: #0096d6;
+    }
+
+    .video-box {
+      width: 100%;
+      background-color: #000000;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .video-box video {
+      width: 100%;
+      max-height: 420px;
+      display: block;
+    }
+
+    .sidebar-right-news-td {
+      width: 32%;
+      background-color: #f8fafc;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+
+    .sidebar-right-news-td h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #1f2c42;
+      border-bottom: 2px solid #0096d6;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    .news-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-title {
+      font-weight: bold;
+      font-size: 13.5px;
+      color: #0096d6;
+    }
+
+    .news-desc {
+      font-size: 12px;
+      color: #777777;
+    }
+
+    /* 7. Footer Table */
+    .footer-table {
+      width: 100%;
+      background-color: #1f2c42;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP CYAN UTILITY BAR TABLE -->
+  <table border="0" cellpadding="0" cellspacing="0" class="top-bar-table">
+    <tr>
+      <td align="left">
+        <a href="#">MSUB Webmail</a> &nbsp;|&nbsp;
+        <a href="#">RTI Act</a> &nbsp;|&nbsp;
+        <a href="#">Academic Calendar</a> &nbsp;|&nbsp;
+        <a href="#">Useful Links</a> &nbsp;|&nbsp;
+        <a href="#">Contact Us</a> &nbsp;|&nbsp;
+        <a href="#">MSUB Staff</a> &nbsp;|&nbsp;
+        <a href="#">Old Website</a>
+      </td>
+      <td align="right" class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 2. MAIN HEADER LOGO TABLE -->
+  <table border="0" cellpadding="0" cellspacing="0" class="univ-header-table">
+    <tr>
+      <td class="logo-left-td">
+        <img src="assets/msub_logo.png" alt="MSUB Emblem Logo" class="logo-img">
+      </td>
+      <td class="title-center-td">
+        <h1>THE MAHARAJA SAYAJIRAO UNIVERSITY OF BARODA</h1>
+      </td>
+      <td class="logo-right-td">
+        <img src="assets/naac_logo.png" alt="NAAC A+ Badge Logo" class="logo-img">
+      </td>
+    </tr>
+  </table>
+
+  <!-- 3. NAVIGATION BAR TABLE -->
+  <table border="0" cellpadding="0" cellspacing="0" class="navbar-table">
+    <tr>
+      <td><a href="MSUHome.html" class="active"><i class="fa-solid fa-house"></i></a></td>
+      <td><a href="AboutMe.html">About MSUB</a></td>
+      <td><a href="#">Governance and Administration</a></td>
+      <td><a href="lab1_fte.html">Academics</a></td>
+      <td><a href="Home.html">Students Corner</a></td>
+      <td><a href="#">IQAC</a></td>
+      <td><a href="#">Research</a></td>
+      <td><a href="#">Central Facilities</a></td>
+      <td><a href="#">NIRF</a></td>
+    </tr>
+  </table>
+
+  <!-- 4. HERO LAYOUT 3-COLUMN TABLE -->
+  <table border="0" cellpadding="0" cellspacing="0" class="hero-layout-table">
+    <tr>
+      <!-- Left Sidebar Column -->
+      <td class="sidebar-left-td">
+        <a href="#">Examination Schedule</a>
+        <a href="#">The MSU Union</a>
+        <a href="#">MSUB Exam Manager</a>
+        <a href="#">Moodle</a>
+        <a href="#">Student Recognitions</a>
+        <a href="#">Student Achievements</a>
+      </td>
+
+      <!-- Center Slider Column -->
+      <td class="slider-center-td">
+        <span class="slider-arrow arrow-left" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></span>
+        <img id="mainSliderImg" src="assets/msu_slide_1.jpg" alt="The Maharaja Sayajirao University Slide">
+        <span class="slider-arrow arrow-right" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></span>
+      </td>
+
+      <!-- Right Sidebar Column -->
+      <td class="sidebar-right-td">
+        <a href="#">Annual Report</a>
+        <a href="#">Notifications</a>
+        <a href="#">Accreditation</a>
+        <a href="#">Ranking</a>
+        <a href="#">Staff Recognitions</a>
+        <a href="#">Staff Achievements</a>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 5. COLOR BUTTON GRID TABLE -->
+  <table border="0" cellpadding="0" cellspacing="0" class="button-grid-table">
+    <!-- Row 1 -->
+    <tr>
+      <td class="btn-cell-card btn-orange"><a href="Home.html"><i class="fa-solid fa-university"></i> Admissions</a></td>
+      <td class="btn-cell-card btn-maroon"><a href="#"><i class="fa-solid fa-user-graduate"></i> Alumni</a></td>
+      <td class="btn-cell-card btn-red"><a href="#"><i class="fa-solid fa-book"></i> H. M. Library</a></td>
+      <td class="btn-cell-card btn-teal"><a href="#"><i class="fa-solid fa-file-lines"></i> Gujarat SET</a></td>
+      <td class="btn-cell-card btn-purple"><a href="#"><i class="fa-solid fa-eye"></i> MSUB At Glance</a></td>
+      <td class="btn-cell-card btn-coral"><a href="#"><i class="fa-solid fa-link"></i> Useful Links</a></td>
+    </tr>
+    <!-- Row 2 -->
+    <tr>
+      <td class="btn-cell-card btn-orange"><a href="#"><i class="fa-solid fa-certificate"></i> ePramanPatra</a></td>
+      <td class="btn-cell-card btn-maroon"><a href="#"><i class="fa-solid fa-user-plus"></i> Recruitment</a></td>
+      <td class="btn-cell-card btn-red"><a href="#"><i class="fa-solid fa-calendar-days"></i> MSUB Events</a></td>
+      <td class="btn-cell-card btn-teal"><a href="#"><i class="fa-solid fa-laptop-code"></i> CCC Exam</a></td>
+      <td class="btn-cell-card btn-purple"><a href="#"><i class="fa-solid fa-network-wired"></i> MSUB Connect</a></td>
+      <td class="btn-cell-card btn-coral"><a href="#"><i class="fa-solid fa-newspaper"></i> MSUB Journal</a></td>
+    </tr>
+  </table>
+
+  <!-- 6. MAIN WELCOME CONTENT & VIDEO TABLE -->
+  <table border="0" cellpadding="0" cellspacing="0" class="main-content-table">
+    <tr>
+      <!-- Left Content Cell -->
+      <td class="content-left-td">
+        <h2>Welcome To The Maharaja Sayajirao University of Baroda</h2>
+        <p>
+          The Maharaja Sayajirao University of Baroda (MSU), state university, established in 1949, located in Vadodara, Gujarat, India. It is a residential university and its origin can be traced back to the School of Agriculture, established in 1890. MSU is one of the premier institutions of higher learning in Western India, offering world-class courses in Engineering, Technology, Science, Commerce, Fine Arts, and Humanities.
+        </p>
+
+        <!-- Embedded Video Player -->
+        <div class="video-container-box">
+          <h3><i class="fa-solid fa-play-circle"></i> College Campus Video Presentation</h3>
+          <div class="video-box">
+            <video controls poster="assets/fte_hero_aerial.jpg">
+              <source src="assets/msu_official_9min.mp4" type="video/mp4">
+              <source src="assets/college_video.mp4" type="video/mp4">
+              Your browser does not support HTML5 video player.
+            </video>
+          </div>
+        </div>
+      </td>
+
+      <!-- Right News Sidebar Cell -->
+      <td class="sidebar-right-news-td">
+        <h3>Announcements</h3>
+        
+        <div class="news-item">
+          <div class="news-title">Student Registration Form 2026</div>
+          <div class="news-desc">Admissions open for academic session</div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-title">NAAC Grade A+ Accredited</div>
+          <div class="news-desc">Achieved highest national distinction rating</div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-title">Examination Timetable</div>
+          <div class="news-desc">Semester exams schedule published</div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 7. FOOTER TABLE -->
+  <table border="0" cellpadding="0" cellspacing="0" class="footer-table">
+    <tr>
+      <td>
+        &copy; 2026 The Maharaja Sayajirao University of Baroda. All rights reserved.
+      </td>
+    </tr>
+  </table>
+
+  <!-- SLIDESHOW ROTATOR SCRIPT FOR OFFICIAL MSU SLIDES -->
+  <script>
+    const msuSlides = [
+      'assets/msu_slide_1.jpg',
+      'assets/fte_hero_aerial.jpg',
+      'assets/msu_slide_5.jpg',
+      'assets/msu_slide_10.jpg',
+      'assets/msu_slide_11.jpg'
+    ];
+    let slideIdx = 0;
+    const slideImg = document.getElementById('mainSliderImg');
+
+    function displaySlide(index) {
+      slideIdx = (index + msuSlides.length) % msuSlides.length;
+      if (slideImg) {
+        slideImg.src = msuSlides[slideIdx];
+      }
+    }
+
+    function nextSlide() { displaySlide(slideIdx + 1); }
+    function prevSlide() { displaySlide(slideIdx - 1); }
+
+    // Auto rotate every 3.5 seconds
+    setInterval(nextSlide, 3500);
+  </script>
+</body>
+</html>
