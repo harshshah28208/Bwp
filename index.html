@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BWP Web Programming Assignment Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: Arial, Helvetica, sans-serif;
+      padding-bottom: 40px;
+    }
+
+    .portal-header {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 4px solid #2563eb;
+    }
+
+    .section-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #0f172a;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .task-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .task-link:hover {
+      background-color: #eff6ff;
+      border-color: #2563eb;
+      color: #2563eb;
+      transform: translateX(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="portal-header shadow-sm">
+    <div class="container">
+      <h1 class="fw-bold mb-2"><i class="fa-solid fa-graduation-cap text-info me-2"></i>BWP Lab Assignments</h1>
+      <p class="text-light-50 mb-0">Web Programming Lab 1, Lab 2, Lab 3 &amp; Tic-Tac-Toe Game Submission</p>
+    </div>
+  </header>
+
+  <div class="container" style="max-width: 900px;">
+    
+    <!-- LAB 1 SECTION -->
+    <div class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-folder-open text-primary"></i> Lab 1 Tasks</h2>
+      <div class="list-group">
+        <a href="lab1_sidemenu.html" class="task-link">
+          <span><i class="fa-solid fa-bars me-2 text-primary"></i> Task 1: Department Side Menu</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="lab1_fte.html" class="task-link">
+          <span><i class="fa-solid fa-table-cells me-2 text-primary"></i> Task 2: Faculty of Tech &amp; Engg (Table Layout)</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- LAB 2 SECTION -->
+    <div class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-folder-open text-success"></i> Lab 2 Tasks</h2>
+      <div class="list-group">
+        <a href="Home.html" class="task-link">
+          <span><i class="fa-solid fa-id-card me-2 text-success"></i> Task 1: Student Registration Form (Home.html)</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="AboutMe.html" class="task-link">
+          <span><i class="fa-solid fa-user me-2 text-success"></i> Task 1: About Me Page</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="ContactUs.html" class="task-link">
+          <span><i class="fa-solid fa-envelope me-2 text-success"></i> Task 1: Contact Us Page</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="MSUHome.html" class="task-link">
+          <span><i class="fa-solid fa-university me-2 text-success"></i> Task 2: Official MSU Home Page &amp; Video</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- LAB 3 SECTION -->
+    <div class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-folder-open text-warning"></i> Lab 3 Tasks (CSS &amp; Bootstrap)</h2>
+      <div class="list-group">
+        <a href="lab3_vertical_nav.html" class="task-link">
+          <span><i class="fa-solid fa-bars-staggered me-2 text-warning"></i> Task 1: Vertical Navigation Bar</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="lab3_horizontal_nav.html" class="task-link">
+          <span><i class="fa-solid fa-ellipsis me-2 text-warning"></i> Task 2: Horizontal Navigation Bar</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="lab3_art_craft_album.html" class="task-link">
+          <span><i class="fa-solid fa-palette me-2 text-warning"></i> Task 3: Art &amp; Craft Photo Album (Bootstrap)</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="lab3_student_marksheet.html" class="task-link">
+          <span><i class="fa-solid fa-file-lines me-2 text-warning"></i> Task 4: Student Marksheet (Bootstrap)</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="lab3_employment_form.html" class="task-link">
+          <span><i class="fa-solid fa-briefcase me-2 text-warning"></i> Task 5: Employment Application Form (Bootstrap)</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+        <a href="lab3_flipkart_home.html" class="task-link">
+          <span><i class="fa-solid fa-cart-shopping me-2 text-warning"></i> Task 6: Flipkart Home Page (Bootstrap Dropdowns)</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- GAME SECTION -->
+    <div class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-gamepad text-danger"></i> Interactive Web Game</h2>
+      <div class="list-group">
+        <a href="tictactoe.html" class="task-link">
+          <span><i class="fa-solid fa-gamepad me-2 text-danger"></i> Tic-Tac-Toe Game (2-Player &amp; AI)</span>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
